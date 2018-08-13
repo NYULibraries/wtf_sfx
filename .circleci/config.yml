@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  run_tests:
     docker:
       - image: circleci/ruby:2.5.1
     working_directory: ~/app
@@ -21,3 +21,12 @@ jobs:
           name: Run rspec in parallel
           command: |
             bundle exec rake
+
+workflows:
+  version: 2
+  run_hourly:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+    jobs:
+      - run_tests
