@@ -30,5 +30,7 @@ workflows:
           cron: "* * * * *"
           filters:
             branches:
+              only:
+                - master
     jobs:
       - run_tests
