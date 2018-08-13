@@ -1,10 +1,10 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "rake", "~> 10.1.0"
-gem "pry"
+gem 'rake', '~> 12.3'
+gem 'pry', '~> 0'
 # Leverage ActiveSupport core extensions.
-gem "activesupport", "~> 4.0.0"
-gem "rspec", "~> 2.14.1"
-gem "capybara", "~> 2.1.0"
-gem "selenium-webdriver", "~> 2.37.0"
-gem "poltergeist", "~> 1.4.1"
+gem 'activesupport', '~> 4.1'
+gem 'rspec', '~> 3.8'
+gem 'capybara', '~> 3.5'
+gem 'selenium-webdriver', '~> 3.14'
+gem 'poltergeist', '~> 1.18.1'

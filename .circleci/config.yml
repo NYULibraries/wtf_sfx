@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  run_tests:
+    docker:
+      - image: circleci/ruby:2.5.1
+    working_directory: ~/app
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - wtf_sfx-{{ checksum "Gemfile.lock" }}
+            - wtf_sfx-
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: wtf_sfx-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+      - run:
+          name: Run rspec in parallel
+          command: |
+            bundle exec rake
+
+workflows:
+  version: 2
+  run_hourly:
+    triggers:
+      - schedule:
+          cron: "0 * * * *"
+    jobs:
+      - run_tests
