@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  run_tests:
     docker:
       - image: circleci/ruby:2.5.1
     working_directory: ~/app
