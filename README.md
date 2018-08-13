@@ -1,4 +1,4 @@
-# WTF? SFX
+# SFX tests
 
 [![CircleCI](https://circleci.com/gh/NYULibraries/wtf_sfx.svg?style=svg)](https://circleci.com/gh/NYULibraries/wtf_sfx)
 
