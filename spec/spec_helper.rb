@@ -13,6 +13,13 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = 'random'
+  config.around(:example) do |example|
+    # failed = false
+    # until failed
+    #   example.run rescue failed = true
+    # end
+    # 2.times { example.run }
+  end
 end
 # Use Capybara and Selenium
 require 'capybara/rspec'
