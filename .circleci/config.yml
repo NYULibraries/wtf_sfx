@@ -3,7 +3,7 @@ jobs:
   run_tests:
     docker:
       - image: nyulibraries/wtf_sfx
-    working_directory: ~/app
+    working_directory: /app
     steps:
       - run:
           name: Run rspec
