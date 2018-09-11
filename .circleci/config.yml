@@ -15,7 +15,7 @@ workflows:
   run_hourly:
     triggers:
       - schedule:
-          cron: "* * * * *"
+          cron: "0 * * * *"
           filters:
             branches:
               only:
