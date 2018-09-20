@@ -8,7 +8,11 @@ jobs:
       - run:
           name: Run rspec
           command: |
-            rake
+            bundle exec rspec --format RspecJunitFormatter --out ./test-results/junit.xml
+      - store_test_results:
+          path: ~/test-results
+      - store_artifacts:
+          path: ~/test-results
 
 workflows:
   version: 2
