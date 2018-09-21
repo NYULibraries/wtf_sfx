@@ -10,9 +10,9 @@ jobs:
           command: |
             bundle exec rspec --format RspecJunitFormatter --out ./test-results/junit.xml
       - store_test_results:
-          path: ~/test-results
+          path: /app/test-results
       - store_artifacts:
-          path: ~/test-results
+          path: /app/test-results
 
 workflows:
   version: 2
