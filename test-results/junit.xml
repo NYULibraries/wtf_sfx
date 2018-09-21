@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="rspec" tests="1" skipped="0" failures="0" errors="0" time="2.089055" timestamp="2018-09-20T16:13:26-04:00" hostname="ba36.local">
-<properties>
-<property name="seed" value="61579"/>
-</properties>
-<testcase classname="spec.wtf_sfx.pmid_spec" name="Pubmed resolution for pmid 10080951 in the SFX API has a full text service" file="./spec/wtf_sfx/pmid_spec.rb" time="2.088176"></testcase>
-</testsuite>
