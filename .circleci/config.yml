@@ -2,7 +2,7 @@ version: 2
 jobs:
   run_tests:
     docker:
-      - image: quay.io/nyulibraries/wtf_sfx
+      - image: quay.io/nyulibraries/circleci_docker:18.06.1-dc-1.23.2-0
     working_directory: /app
     steps:
       - setup_remote_docker
@@ -13,7 +13,11 @@ jobs:
       - run:
           name: Run rspec
           command: |
-            bundle exec rake
+            docker run --name wtf_sfx quay.io/nyulibraries/wtf_sfx
+      - run:
+          name: Get Junit tests from stopped container
+          when: always
+          command: docker cp wtf_sfx:/app/test-results .
       - store_test_results:
           path: /app/test-results
       - store_artifacts:
