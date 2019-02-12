@@ -5,6 +5,7 @@ jobs:
       - image: quay.io/nyulibraries/wtf_sfx
     working_directory: /app
     steps:
+      - setup_remote_docker
       - run:
           name: Authenticate Quay
           command: |
