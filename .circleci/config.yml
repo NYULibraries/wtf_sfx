@@ -2,9 +2,13 @@ version: 2
 jobs:
   run_tests:
     docker:
-      - image: nyulibraries/wtf_sfx
+      - image: quay.io/nyulibraries/wtf_sfx
     working_directory: /app
     steps:
+      - run:
+          name: Authenticate Quay
+          command: |
+            docker login -u "$QUAY_USERNAME" --password "$QUAY_PASSWORD" quay.io
       - run:
           name: Run rspec
           command: |
